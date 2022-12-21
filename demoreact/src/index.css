@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.container{
+    margin: auto;
+    width: 80vw;
+    min-height: 70vh;
+    background-color: rgb(245, 185, 185);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding:20px 0px;
+}
+
+.all_img img{
+    margin: 10px 10px;
+    
+}
