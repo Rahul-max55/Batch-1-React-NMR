@@ -1,16 +1,12 @@
 import React from "react";
 import "./App.css";
-import Button from "./Button";
-import Conditional from "./Conditional";
+import HooksDemo from "./HooksDemo";
 
 const App = () => {
-
-
     return (
         <>
             <div className="container">
-                <Button />
-                <Conditional />
+               <HooksDemo />
             </div>
         </>
     )

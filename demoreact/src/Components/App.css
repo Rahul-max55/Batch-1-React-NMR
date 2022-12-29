@@ -9,3 +9,11 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
+
+
+button{
+    width: 10%;
+    background-color: bisque;
+    border: 2px solid black;
+}
