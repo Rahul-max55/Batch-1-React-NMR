@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-import HooksDemo from "./HooksDemo";
+import Form from "./Form";
 
 const App = () => {
     return (
         <>
             <div className="container">
-               <HooksDemo />
+               <Form />
             </div>
         </>
     )
