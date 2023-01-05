@@ -1,13 +1,28 @@
 import React from "react";
+import About from "./About";
 import "./App.css";
-import Form from "./Form";
+import Contact from "./Contact";
+import Home from "./Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./Navbar";
+
 
 const App = () => {
     return (
         <>
-            <div className="container">
-               <Form />
-            </div>
+            <BrowserRouter>
+
+                <Navbar />
+
+                <Routes>
+
+                    <Route path="/" element={<Home />} />
+                    <Route path="/About" element={<About />} />
+                    <Route path="/Contact" element={<Contact />} />
+
+                </Routes>
+
+            </BrowserRouter>
         </>
     )
 }
