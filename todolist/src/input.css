@@ -1,0 +1,63 @@
+.block2 {
+    margin: auto;
+    width: 50vw;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.if {
+    width: 450px;
+    height: 25px;
+    border-radius: 25px;
+    padding: 15px;
+    font-weight: bolder;
+    font-size: 20px;
+    color: rgb(95, 59, 34);
+    background-color: transparent;
+    border: 5px solid white;
+}
+
+.block2 svg {
+    font-size: 70px;
+    color: rgb(95, 59, 34);
+    margin: 10px;
+}
+
+.tdi {
+    width: 50vw;
+    min-height: 300px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.note {
+    width: 95%;
+    height: 50px;
+    margin: 10px;
+    border-bottom: 5px solid white;
+    border-radius: 30px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.note svg {
+    font-size: 50px;
+    color: rgb(95, 59, 34);
+}
+
+.note h1 {
+    font-family: 'Dancing Script', cursive;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}

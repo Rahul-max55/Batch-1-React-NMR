@@ -1,0 +1,37 @@
+.modalCon {
+    width: 600px;
+    height: 300px;
+    background-color: rgb(152, 186, 243);
+    position: absolute;
+    bottom: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+}
+
+
+#textVal {
+    border-radius: 10px;
+    resize: none;
+    padding: 4px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+.all_btn {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+}
+
+.all_btn button{
+    width: 120px;
+    height: 50px;
+    background-color: gainsboro;
+    color: black;
+    font-size: 18px;
+}
