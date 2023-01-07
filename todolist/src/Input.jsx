@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./input.css"
 import NoteAddIcon from '@mui/icons-material/NoteAdd';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
@@ -10,6 +10,7 @@ const Input = () => {
 
     const [inputData, setInputData] = useState("");
     const [showData, setShowData] = useState([])
+    const [Filtered, setFiltered] = useState(showData);
     const [open, setOpen] = useState(false);
     const [val, setVal] = useState("");
     const [ids, setIds] = useState("");
@@ -20,11 +21,23 @@ const Input = () => {
     }
 
     const handleClick = () => {
-        setShowData([...showData, inputData])
+        if(inputData === ""){
+            alert("error")
+        }else{
+            setShowData((oldValue) => [...oldValue, inputData]);
+            setInputData("")
+        }
+
     }
 
+    useEffect(() =>{
+        let x = new Set(showData)
+        setFiltered([...x])
+    }, [showData])
+
+
     const handleDelete = (index) => {
-        setShowData(showData.filter((val, i) => {
+        setFiltered(Filtered.filter((val, i) => {
             return i !== index;
         }))
     }
@@ -35,6 +48,7 @@ const Input = () => {
                 setVal(val)
                 setIds(index);
             }
+            return 0;
         })
 
         setOpen(true)
@@ -45,13 +59,12 @@ const Input = () => {
     }
 
     const editValue = () => {
-        setShowData(showData.map((val, index) => {
+        setFiltered(Filtered.map((val, index) => {
             if (index === ids) {
                 return inputData;
             } else {
                 return val;
             }
-
         })
         )
         setOpen(false)
@@ -68,7 +81,7 @@ const Input = () => {
             <br />
             <div className="tdi">
                 {
-                    showData.map((val, index) => {
+                    Filtered.map((val, index) => {
                         return <div className="note" key={index} >
                             <h1>{val}</h1>
                             <div className="icons">
@@ -79,7 +92,7 @@ const Input = () => {
                     })
                 }
 
-                {open && <OpenModal handleChange={handleChange} handleClose={handleClose} val={val} editValue={editValue} />}
+                {open && <OpenModal inputData={inputData} handleChange={handleChange} handleClose={handleClose} val={val} editValue={editValue} />}
             </div>
         </>
     )

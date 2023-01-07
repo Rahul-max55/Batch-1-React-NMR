@@ -1,30 +1,20 @@
-import React from "react";
-import About from "./About";
+import React, { createContext, useState } from "react";
 import "./App.css";
-import Contact from "./Contact";
-import Home from "./Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./Navbar";
+import ComA from "./ComA";
 
+
+let userContext = createContext();
 
 const App = () => {
+    const [demo, setDemo] = useState("Rahul")
     return (
         <>
-            <BrowserRouter>
-
-                <Navbar />
-
-                <Routes>
-
-                    <Route path="/" element={<Home />} />
-                    <Route path="/About" element={<About />} />
-                    <Route path="/Contact" element={<Contact />} />
-
-                </Routes>
-
-            </BrowserRouter>
+            <userContext.Provider value={{ demo, setDemo }}>
+                <ComA />
+            </userContext.Provider>
         </>
     )
 }
 
-export default App
+export default App;
+export { userContext };
