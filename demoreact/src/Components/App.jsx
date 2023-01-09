@@ -1,20 +1,15 @@
-import React, { createContext, useState } from "react";
+import React from "react";
 import "./App.css";
 import ComA from "./ComA";
 
 
-let userContext = createContext();
 
 const App = () => {
-    const [demo, setDemo] = useState("Rahul")
     return (
-        <>
-            <userContext.Provider value={{ demo, setDemo }}>
+        <React.StrictMode>
                 <ComA />
-            </userContext.Provider>
-        </>
+        </React.StrictMode>
     )
 }
 
 export default App;
-export { userContext };

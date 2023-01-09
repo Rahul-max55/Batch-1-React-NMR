@@ -1,11 +1,14 @@
-import React from 'react'
-import ComC from './ComC'
+import React from 'react';
+import style from "./ComB.module.css";
+import ComC from './ComC';
+
 
 const ComB = () => {
     return (
         <>
-            <div>ComB</div>
-            <ComC  />
+            <div className={style.parent}>ComB</div>
+            <div className={style.child}>aaaaa</div>
+            <ComC />
         </>
     )
 }

@@ -1,20 +1,9 @@
-import React, { useContext } from 'react';
-import { userContext } from "./App";
+import React from 'react'
 
 const ComC = () => {
-
-    let { demo, setDemo } = useContext(userContext);
-    
-    const handle = () => {
-        setDemo("birla")
-    }
-
-    return (
-        <>
-            <div>{demo}</div>
-            <button onClick={handle}>Change Value</button>
-        </>
-    )
+  return (
+    <div >ComC</div>
+  )
 }
 
 export default ComC

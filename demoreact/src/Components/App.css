@@ -27,3 +27,21 @@ button{
 
     margin: 10px 0px;
 } */
+
+
+:root {
+    --primeryColor: rgb(250, 193, 193);
+    --SecondColor: rgb(154, 250, 213);
+    --button: rgb(98, 122, 231);
+}
+
+.container {
+    background-color: var(--primeryColor);
+    color: var(--SecondColor);
+}
+
+
+.OutsideDiv{
+    background-color: var(--button);
+}
+

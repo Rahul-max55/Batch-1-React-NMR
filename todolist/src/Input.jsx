@@ -21,16 +21,16 @@ const Input = () => {
     }
 
     const handleClick = () => {
-        if(inputData === ""){
+        if (inputData === "") {
             alert("error")
-        }else{
+        } else {
             setShowData((oldValue) => [...oldValue, inputData]);
             setInputData("")
         }
 
     }
 
-    useEffect(() =>{
+    useEffect(() => {
         let x = new Set(showData)
         setFiltered([...x])
     }, [showData])
@@ -43,14 +43,13 @@ const Input = () => {
     }
 
     const openModal = (index) => {
-        showData.map((val, i) => {
+        Filtered.map((val, i) => {
             if (i === index) {
                 setVal(val)
                 setIds(index);
             }
             return 0;
         })
-
         setOpen(true)
     }
 
@@ -59,15 +58,16 @@ const Input = () => {
     }
 
     const editValue = () => {
-        setFiltered(Filtered.map((val, index) => {
+        inputData === "" ? alert("fill the input") : setFiltered(Filtered.map((val, index) => {
             if (index === ids) {
+                setOpen(false)
                 return inputData;
             } else {
+                setOpen(false)
                 return val;
             }
-        })
-        )
-        setOpen(false)
+        }))
+        setInputData("")
     }
 
     return (
