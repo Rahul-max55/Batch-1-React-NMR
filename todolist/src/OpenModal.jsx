@@ -1,10 +1,13 @@
 import React from 'react';
-import './OpenModal.css'
+import './OpenModal.css';
+
+
+
 
 const OpenModal = (props) => {
-
     console.log(props.val);
 
+      
 
     return (
         <>

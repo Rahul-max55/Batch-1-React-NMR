@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import "./input.css"
+import React, { useEffect, useReducer, useState } from 'react'
+import "./input.css";
 import NoteAddIcon from '@mui/icons-material/NoteAdd';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
@@ -8,6 +8,22 @@ import OpenModal from './OpenModal';
 
 const Input = () => {
 
+    const intialState = {
+        inputData: "",
+        showData: [],
+        Filtered: "showData",
+        open: false,
+        val: "",
+        ids: ""
+    }
+
+    const reducer = (value) => {
+        console.log(value);
+    }
+
+    let [state, dispatch] = useReducer(reducer, intialState);
+
+
     const [inputData, setInputData] = useState("");
     const [showData, setShowData] = useState([])
     const [Filtered, setFiltered] = useState(showData);
@@ -15,9 +31,11 @@ const Input = () => {
     const [val, setVal] = useState("");
     const [ids, setIds] = useState("");
 
+
     const handleChange = (e) => {
         const { value } = e.target;
         setInputData(value);
+        dispatch(value);
     }
 
     const handleClick = () => {
