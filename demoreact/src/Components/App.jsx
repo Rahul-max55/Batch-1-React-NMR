@@ -1,27 +1,19 @@
-import React, { useState, useCallback } from "react";
+import React , {useState , useEffect} from "react";
+import ApiDemo from "./ApiDemo";
 import "./App.css";
-import Todo from "./Todo";
+import useFetch from "./useFetch";
 
 const App = () => {
 
-    const [count, setCount] = useState(0);
-    const [todo, setTOdo] = useState(["old item"]);
-
-    const addItems = useCallback(() => {
-        return setTOdo([...todo, "newItem"]);
-    }, [todo])
-    // setTOdo((v) => {[...v, "newItem"]});
-    
-    // const addItems = () => {
-    //     setTOdo([...todo, "newItem"])
-    // }
-
+   const[apiData] =  useFetch("https://jsonplaceholder.typicode.com/posts");
+  
     return (
         <>
-            <h1>{count}</h1>
-            <button onClick={() => { setCount(count + 1) }} >start count</button>
-            <br />
-            <Todo addItems={addItems} todo={todo} />
+            <h1>i am a heading</h1>
+            {apiData && apiData.map((val) => {
+                return <p>{val.title}</p>
+            })}
+            <ApiDemo />
         </>
 
     )
